@@ -1,0 +1,13 @@
+http://challenge01.root-me.org/web-serveur/ch14/
+
+CRLF la viec chen cac ky tu cr 0x0d (%0d) va lf 0x0a (%0a);
+Nó có tác dụng là tạo ra một dòng mới và lùi vào đầu dòng ứng với \r\n.
+
+payload = username=admin authenticated.%0d%0ahacked&password=blabla
+
+Nghĩa là như này, đề bài yêu cầu tạo ra 1 line giả trong log báo rằng “admin authenticated.” .
+Nếu ta nhập như trên nghĩa là đến khi nó đọc đến %0d%0a nó sẽ nhảy xuống một dòng mới và "hacked" sẽ nằm ở dòng mới đó, thì đó ta đã tạo 1 thông báo giả.
+
+Vậy thôi!!!!
+
+Well done, you can validate challenge with this password : rFSP&G0p&5uAg1%

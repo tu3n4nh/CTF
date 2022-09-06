@@ -1,0 +1,13 @@
+http://challenge01.root-me.org/web-serveur/ch61/
+
+Bai nay moi dau that su la be stuck
+sau khi di tham khao
+thi de lam duoc bai nay phai lam skill dau tien cua security do chinh la Information gathering
+buoc dau tien la xem xem website do co file ./.git/ khong
+neu co ta dung tool scrabble de clone git do ve
+sau do dung lenh: git show
+de show commit
+va the la
+ten ten ten tennnnn
+
+flag => s3cureP@ssw0rd

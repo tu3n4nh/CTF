@@ -1,0 +1,13 @@
+http://challenge01.root-me.org/web-serveur/ch6/
+
+Ten bai la phpBB nen ta se di tim hieu ve phpBB truoc
+PhpBB là một phần mềm miễn phí và cung cấp các tính năng hữu ích có sẵn, 
+đây là công cụ xây dựng diễn đàn phổ biến nhất hiện nay. 
+Cái tên phpBB là từ viết tắt của cụm PHP Bulletin Board
+
+Ctrl+U thay /web-serveur/ch6/phpbb/
+
+dung dirsearch -> install -> flag
+
+hoac co the dung gobuster: gobuster dir -u http://challenge01.root-me.org/web-serveur/ch6/phpbb/ -w /usr/share/dirb/wordlists/common.txt
+
