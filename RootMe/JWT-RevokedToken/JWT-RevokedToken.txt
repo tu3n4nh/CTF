@@ -1,0 +1,8 @@
+bài đó mình xin token xong
+nó thêm token đó vào blacklist
+xong bài đó vẫn lấy y nguyên cái token kia thêm dấu = đằng sau
+thế là dùng nó lấy được flag
+iem hiểu đoạn đó là kiểu
+jwt là encode base64
+mà trong base64 có dấu = đằng sau nó k ảnh hưởng gì đến việc decode
+thế là vẫn dùng được cái token đó mà nó lại không có trong blacklist
