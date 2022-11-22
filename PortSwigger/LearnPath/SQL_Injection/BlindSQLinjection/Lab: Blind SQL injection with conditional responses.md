@@ -6,7 +6,7 @@ The results of the SQL query are not returned, and no error messages are display
 
 The database contains a different table called `users`, with columns called `username` and `password`. You need to exploit the blind __SQL injection__ vulnerability to find out the password of the `administrator` user.
 
-To solve the lab, log in as the administrator user.
+To solve the lab, log in as the `administrator` user.
 
 ## Hint
 
@@ -53,7 +53,7 @@ Because the password we want to check is in table `users`, so that we use `FROM 
 And why `SELECT 'a'`? because at the end of query have a apostrophe (') to close the string, so that we need `SELECT 'a'` to query same `'a'='a'` (return TRUE).
 All other conditions return TRUE, the only condition `LENGTH(password) > 1` to determine the value TRUE or FALSE of returned result.
 
-After increase length to 20 (LENGTH(password) > 20) the _Welcome back_ message disapper. So we confrim that password length is 20.
+After increase length to 20 (LENGTH(password) > 20) the _Welcome back_ message disappear. So we confirm that password length is 20.
 Next step is brute force each value in each index of password. To do that we need use `SUBSTRING()` function:
 ```SQL
 ' AND (SELECT SUBSTRING(password,1,1) FROM users WHERE username = 'administrator') = 'a
