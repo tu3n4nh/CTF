@@ -66,10 +66,10 @@ Because a WAF will block requests that contain obvious signs of a SQL injection 
     </stockCheck>
 ```
 
-__Return: 
-724 units
-wiener~jy95yieqb1if6u2cmxe8
-carlos~60dc8ocs0appjyntafh2
-administrator~78fym7ek6kmpqz8uudb7__
+__Return:__
+__724 units__
+__wiener~jy95yieqb1if6u2cmxe8__
+__carlos~60dc8ocs0appjyntafh2__
+__administrator~78fym7ek6kmpqz8uudb7__
 
 So we solved this lab
