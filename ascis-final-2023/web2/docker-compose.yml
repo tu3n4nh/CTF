@@ -1,0 +1,24 @@
+version: "3.3"
+services:
+  front:
+    build: ./front
+    container_name: web2_front
+    networks:
+      - no-internet
+      - internet
+    ports:
+      - "8004:5000"
+    depends_on: 
+      - back
+    restart: always
+  back:
+    build: ./back
+    container_name: web2_back
+    networks:
+      - no-internet
+    restart: always
+
+networks:
+  internet: {}
+  no-internet:
+    internal: true
