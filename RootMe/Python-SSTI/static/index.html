@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" property="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" media="all">
+    <title>Python - Blind Server Side Template Injection</title>
+  </head>
+  <body>
+    <iframe id='iframe' src='https://www.root-me.org/?page=externe_header'></iframe>
+    <div class="container">
+      <h1>Hackorp</h1>
+      <hr>
+      <br>
+      <p>
+        Here at Hackorp, we believe that security can always be improved. This is why we are always recruting the top hackers for our private bug bounty program!
+        <br>
+
+        If you think your profile might interest us, feel free to submit your application to our private bug bounty program:
+      </p>
+      <br>
+      <br>
+      <center>
+        <form class="register" action="" method="post">
+          <table>
+            <tr>
+              <td class="tablecell">
+                <label for="name"><strong>Name</strong></label>
+              </td>
+              <td class="tablecell">
+                <input type="text" name="name" value="" placeholder="Name" size=20 maxlength=20>
+              </td>
+            </tr>
+            <tr>
+              <td class="tablecell">
+                <label for="surname"><strong>Surname</strong></label>
+              </td>
+              <td class="tablecell">
+                <input type="text" name="surname" value="" placeholder="Surname" size=52 maxlength=52>
+              </td>
+            </tr>
+            <tr>
+              <td class="tablecell">
+                <label for="email"><strong>Email address</strong></label>
+              </td>
+              <td class="tablecell">
+                <input type="text" name="email" value="" placeholder="Email address" size=52 maxlength=52>
+              </td>
+            </tr>
+            <tr>
+              <td class="tablecell">
+                <label for="bday"><strong>Birth date</strong></label>
+              </td>
+              <td class="tablecell">
+                <input type="text" name="bday" value="" placeholder="01/07/1986" size=10 maxlength=10>
+              </td>
+            </tr>
+          </table>
+          <br>
+          <button type="submit" name="button" style="width:100%">Send your application!</button>
+          {% if error %}
+          <br>
+          <div class="error"><strong>{{ error }}</strong></div>
+          {% endif %}
+          {% if success %}
+          <br>
+          <div class="success"><strong>{{ success }}</strong></div>
+          {% endif %}
+        </form>
+      </center>
+    </div>
+  </body>
+  <footer>
+    Our website's framework is now open source! You can download it <a href="/cms.tar.gz">here</a>. | &copy; Hackorp 2021
+  </footer>
+</html>

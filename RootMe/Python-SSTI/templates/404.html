@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" property="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" media="all">
+    <title>404 Not Found</title>
+  </head>
+  <body>
+    <iframe id='iframe' src='https://www.root-me.org/?page=externe_header'></iframe>
+    <div class="">
+      <center>
+          <h1>404 Not Found</h1>
+      </center>
+    </div>
+  </body>
+  <br>
+  <footer>
+    <hr>
+    Our website's framework is now open source! You can download it <a href="{{ url_for('static', filename='cms.tar.gz') }}">here</a>. | &copy; Hackorp 2021
+  </footer>
+</html>

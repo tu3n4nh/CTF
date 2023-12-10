@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  web2:
+    container_name: ascis_final_web1
+    build: 
+      context: .
+    restart: always
+    ports:
+      - 8002:80

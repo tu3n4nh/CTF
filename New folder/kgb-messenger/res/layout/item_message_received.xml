@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout n1:paddingTop="8.0dip" n1:layout_width="fill_parent" n1:layout_height="wrap_content"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <ImageView n1:id="@id/image_message_profile" n1:layout_width="32.0dip" n1:layout_height="32.0dip" n1:layout_marginLeft="8.0dip" n1:src="@drawable/katyakazanova2" n2:layout_constraintLeft_toLeftOf="parent" n2:layout_constraintTop_toTopOf="parent" xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    <TextView n1:textSize="12.0sp" n1:id="@id/text_message_name" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginLeft="8.0dip" n1:layout_marginTop="4.0dip" n3:layout_constraintLeft_toRightOf="@id/image_message_profile" n3:layout_constraintTop_toTopOf="parent" xmlns:n3="http://schemas.android.com/apk/res-auto" />
+    <TextView n1:textColor="#ff000000" n1:id="@id/text_message_body" n1:background="@drawable/rounded_rectangle_recv" n1:padding="8.0dip" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginLeft="8.0dip" n1:layout_marginTop="4.0dip" n1:maxWidth="240.0dip" n4:layout_constraintLeft_toRightOf="@id/image_message_profile" n4:layout_constraintTop_toBottomOf="@id/text_message_name" xmlns:n4="http://schemas.android.com/apk/res-auto" />
+    <TextView n1:textSize="10.0sp" n1:id="@id/text_message_time" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginLeft="4.0dip" n5:layout_constraintBottom_toBottomOf="@id/text_message_body" n5:layout_constraintLeft_toRightOf="@id/text_message_body" xmlns:n5="http://schemas.android.com/apk/res-auto" />
+</android.support.constraint.ConstraintLayout>

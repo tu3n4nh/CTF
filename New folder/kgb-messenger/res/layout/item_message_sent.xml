@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout n1:paddingTop="8.0dip" n1:layout_width="fill_parent" n1:layout_height="wrap_content"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <TextView n1:textColor="#ffffffff" n1:id="@id/text_message_body" n1:background="@drawable/rounded_rectangle_sent" n1:padding="8.0dip" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginRight="8.0dip" n1:maxWidth="240.0dip" n1:text="hello, hello!" n2:layout_constraintRight_toRightOf="parent" n2:layout_constraintTop_toTopOf="parent" xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    <TextView n1:textSize="10.0sp" n1:id="@id/text_message_time" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginRight="4.0dip" n1:text="11:40" n3:layout_constraintBottom_toBottomOf="@id/text_message_body" n3:layout_constraintRight_toLeftOf="@id/text_message_body" xmlns:n3="http://schemas.android.com/apk/res-auto" />
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout n1:layout_width="fill_parent" n1:layout_height="fill_parent"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <android.support.v7.widget.RecyclerView n1:id="@id/reyclerview_message_list" n1:paddingBottom="60.0dip" n1:layout_width="fill_parent" n1:layout_height="fill_parent" n2:layout_constraintLeft_toLeftOf="parent" n2:layout_constraintRight_toRightOf="parent" n2:layout_constraintTop_toTopOf="parent" xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    <View n1:id="@id/view" n1:background="#ffdfdfdf" n1:layout_width="0.0dip" n1:layout_height="2.0dip" n3:layout_constraintBottom_toTopOf="@id/layout_chatbox" n3:layout_constraintLeft_toLeftOf="parent" n3:layout_constraintRight_toRightOf="parent" xmlns:n3="http://schemas.android.com/apk/res-auto" />
+    <LinearLayout n1:orientation="horizontal" n1:id="@id/layout_chatbox" n1:background="#ffffffff" n1:layout_width="0.0dip" n1:layout_height="wrap_content" n1:minHeight="48.0dip" n4:layout_constraintBottom_toBottomOf="parent" n4:layout_constraintLeft_toLeftOf="parent" n4:layout_constraintRight_toRightOf="parent" xmlns:n4="http://schemas.android.com/apk/res-auto">
+        <EditText n1:layout_gravity="center" n1:id="@id/edittext_chatbox" n1:background="@android:color/transparent" n1:layout_width="0.0dip" n1:layout_height="wrap_content" n1:layout_marginLeft="16.0dip" n1:layout_marginRight="16.0dip" n1:hint="Enter message" n1:maxLines="6" n1:layout_weight="1.0" />
+        <Button n1:textSize="14.0dip" n1:gravity="center" n1:layout_gravity="bottom" n1:id="@id/button_chatbox_send" n1:background="?selectableItemBackground" n1:clickable="true" n1:layout_width="64.0dip" n1:layout_height="48.0dip" n1:text="SEND" n1:onClick="onSendMessage" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
