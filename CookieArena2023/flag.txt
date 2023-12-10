@@ -1,9 +1,0 @@
-SQL Injection bypass login: 		CHH{unpr0t3c7Ed_AdmIN_Unpr3d1c74B1E_ac8fcd48ba6f69ba4901169e3267956d}
-Basic E-Commerce: 			CHH{Br0KeN_Access_CONtrO1_1c8ba153d23dab952ccf463ed23bc9a8}
-Insecure Download File:			CHH{inseCUR3_d0Wnload_IDoR_1e726e2b90a5252f4de4ad8903ed8236}
-Unprotected admin functionality: 	CHH{UNpR0T3CtED_4dm1N_FUNc71OnA1iTY_5ee1d68a3c944caf1e6cc7dab87a50db}
-Unprotected admin functionality	CHH{unpr0t3c7Ed_AdmIN_Unpr3d1c74B1E_ac8fcd48ba6f69ba4901169e3267956d} 
-with unpredictable:
-Hello Cookie: 				CHH{YOU_c4N_EdIT_cOokIe_9b887f03116db7f668bd9a4f911a9f52}
-Baby Ping:					CHH{C0MM4ND_1nj3C7ioN_pinG_07037678cfc64bf5c103be46262feb0a}
-Unrestricted file upload:		CHH{UNRe57RiC7eD_F1l3_UPLoaD_f97e1a764061fa69e425f25cb330436b}
